@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +14,6 @@
 
         .subhead {
             color: #1d6fe0;
-        }
-
-        p {
-            text-align: left;
         }
 
         table {
@@ -40,13 +37,20 @@
 
         #themeButton-style {
             text-align: right;
-
         }
-        #themeButton:hover {
-            background-color: rgb(0, 72, 255);
-            color: white;
-        }
+    #themeButton {
+    background-color: black; /* Set your desired button color here */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 10px; /* Optional: add rounded corners */
+    width: 100%;
+}
 
+#themeButton:hover {
+    color: white; /* Keep text color white on hover */
+}
+    
         .social-icons img {
             width: 25px;
             height: 25px;
@@ -79,10 +83,14 @@
                 body.style.backgroundColor = 'black';
                 body.style.color = 'white';
                 button.textContent = 'Light Theme';
+                button.style.backgroundColor = 'white'
+                button.style.color = 'black'
             } else {
                 body.style.backgroundColor = 'lightgrey';
                 body.style.color = 'black';
                 button.textContent = 'Dark Theme';
+                button.style.backgroundColor = 'black'
+                button.style.color = 'white'
             }
         }
 
@@ -94,9 +102,7 @@
     <p id="themeButton-style">
         <button id="themeButton" class="theme-button" onclick="switchTheme()">Dark Theme</button>
     </p>
-
-    <center>
-        <table border="5" cellpadding="15">
+        <table border="5" cellpadding="15" width="100%" margin="auto">
             <tr>
                 <th align="center">Sanjay Karmur</th>
             </tr>
@@ -104,8 +110,6 @@
                 <td align="center">Personal blog</td>
             </tr>
         </table>
-    </center>
-
     <p><br /></p>
 
     <h3 class="subhead">Introduction</h3>
