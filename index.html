@@ -71,32 +71,36 @@
     <script>
 
         function setInitialTheme() {
-            // Set the default colors on page load
+         
             var body = document.body;
             body.style.backgroundColor = 'lightgrey';
             body.style.color = 'black';
         }
 
-        function switchTheme() {
-            var body = document.body;
-            var button = document.getElementById('themeButton');
+function switchTheme() {
+    var body = document.body;
+    var button = document.getElementById('themeButton');
 
-            if (body.style.backgroundColor === 'lightgrey') {
-                body.style.backgroundColor = 'black';
-                body.style.color = 'white';
-                button.textContent = 'Light Theme';
-                button.style.backgroundColor = 'white'
-                button.style.color = 'black'
-            } else {
-                body.style.backgroundColor = 'lightgrey';
-                body.style.color = 'black';
-                button.textContent = 'Dark Theme';
-                button.style.backgroundColor = 'black'
-                button.style.color = 'white'
-            }
-        }
+    //device vibration for 1ms
+    if (navigator.vibrate) {
+        navigator.vibrate(1);
+    }
 
-        // Ensure the initial theme is set on page load
+    if (body.style.backgroundColor === 'lightgrey') {
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+        button.textContent = 'Light Theme';
+        button.style.backgroundColor = 'white';
+        button.style.color = 'black';
+    } else {
+        body.style.backgroundColor = 'lightgrey';
+        body.style.color = 'black';
+        button.textContent = 'Dark Theme';
+        button.style.backgroundColor = 'black';
+        button.style.color = 'white';
+    }
+}
+
         window.onload = setInitialTheme;
     </script>
 </head>
@@ -153,12 +157,23 @@
             <img src="https://cdn.icon-icons.com/icons2/4029/PNG/512/twitter_x_new_logo_x_round_circle_blue_icon_256074.png" title="X Profile" alt="X Icon"></a>
         <a target="_blank" href="https://instagram.com/mr_yadav_murlidhar">
             <img src="https://cdn.icon-icons.com/icons2/1476/PNG/512/instagram_101780.png" title="Instagram Profile" alt="Instagram Icon"></a>
-        <a target="_blank" href="mailto:karmursanjay156@gmail.com">
+        <a target="_blank" href="mailto:contact@sanjaykarmur.tech">
             <img src="https://pngimg.com/uploads/at_sign/at_sign_PNG52.png" title="Email Me" alt="Email Icon"></a>
     </div>
 <div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9558344278730339"
      crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9558344278730339"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9558344278730339"
+     data-ad-slot="6223421785"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
 </body>
