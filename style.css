@@ -1,0 +1,61 @@
+
+        body {
+            margin: 20px;
+            background-color: lightgrey;
+            color: black;
+        }
+
+        .subhead {
+            color: #1d6fe0;
+        }
+
+        table {
+            border-color: white;
+        }
+
+        th {
+            border: none;
+            font-size: 42px;
+            color: #1d6fe0;
+        }
+
+        td {
+            border: none;
+            font-size: 28px;
+        }
+
+        strong {
+            color: #679eeb;
+        }
+
+        #themeButton-style {
+            text-align: right;
+        }
+    #themeButton {
+    background-color: black; /* Set your desired button color here */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 10px; /* Optional: add rounded corners */
+    width: 100%;
+}
+
+#themeButton:hover {
+    color: white; /* Keep text color white on hover */
+}
+    
+        .social-icons img {
+            width: 25px;
+            height: 25px;
+            margin: 5px;
+        }
+
+        .social-icons a:nth-child(2) img {
+            width: 34px;
+            height: 26px;
+        }
+
+        .social-icons a:nth-child(4) img {
+            width: 23px;
+            height: 23px;
+        }
