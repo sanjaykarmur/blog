@@ -4,35 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
         }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+
+        .tracker-container {
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .data-point {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .data-point strong {
+            color: #0056b3;
+            font-weight: 700;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
         button {
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 1rem;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #0056b3;
             color: white;
             border: none;
             border-radius: 5px;
             margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #003f7d;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #ff6b6b;
+            margin: 10px 0;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        footer a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Device Location Tracker</h1>
-    <p id="status">Press "Start" to request location access and begin tracking!</p>
-    <p><strong>Latitude:</strong> <span id="latitude">N/A</span></p>
-    <p><strong>Longitude:</strong> <span id="longitude">N/A</span></p>
-    <p><strong>Current Speed:</strong> <span id="currentSpeed">0</span> km/h</p>
-    <p><strong>Average Speed:</strong> <span id="averageSpeed">0</span> km/h</p>
-    <p><strong>Total Distance:</strong> <span id="distance">0</span> meters</p>
-    <p><strong>Total Time:</strong> <span id="totalTime">0</span> seconds</p>
-    <button onclick="startTracking()">Start</button>
-    <button onclick="stopTracking()">Stop</button>
+    <div class="tracker-container">
+        <h1>Location Tracker</h1>
+        <p class="status" id="status">Press "Start" to begin tracking your location.</p>
+
+        <div class="data-point">
+            <span><span class="icon">📍</span><strong>Latitude:</strong></span>
+            <span id="latitude">N/A</span>
+        </div>
+        <div class="data-point">
+            <span><span class="icon">📍</span><strong>Longitude:</strong></span>
+            <span id="longitude">N/A</span>
+        </div>
+        <div class="data-point">
+            <span><span class="icon">🚗</span><strong>Current Speed:</strong></span>
+            <span id="currentSpeed">0 km/h</span>
+        </div>
+        <div class="data-point">
+            <span><span class="icon">📊</span><strong>Average Speed:</strong></span>
+            <span id="averageSpeed">0 km/h</span>
+        </div>
+        <div class="data-point">
+            <span><span class="icon">📏</span><strong>Total Distance:</strong></span>
+            <span id="distance">0 m</span>
+        </div>
+        <div class="data-point">
+            <span><span class="icon">⏱️</span><strong>Total Time:</strong></span>
+            <span id="totalTime">0 s</span>
+        </div>
+
+        <button onclick="startTracking()">Start Tracking</button>
+        <button onclick="stopTracking()">Stop Tracking</button>
+    </div>
+
+    <footer>
+        Made with ❤️ by <a href="https://instagram.com/mr_yadav_murlidhar">Sanjay Karmur</a>. Keep exploring!
+    </footer>
 
     <script>
         let watchId = null;
@@ -42,6 +141,7 @@
         let speedSum = 0;
         let speedCount = 0;
         let startTime = null;
+        const minDistanceThreshold = 5; // Minimum distance threshold in meters
 
         function startTracking() {
             if (!navigator.geolocation) {
@@ -55,7 +155,6 @@
                 enableHighAccuracy: true
             });
 
-            // Start time
             if (!startTime) {
                 startTime = Date.now();
             }
@@ -72,31 +171,28 @@
         function updatePosition(position) {
             const { latitude, longitude, speed } = position.coords;
 
-            // Update latitude and longitude
             document.getElementById('latitude').textContent = latitude.toFixed(6);
             document.getElementById('longitude').textContent = longitude.toFixed(6);
 
-            // Update current speed (m/s to km/h)
             const kmhSpeed = speed ? (speed * 3.6).toFixed(2) : 0;
             document.getElementById('currentSpeed').textContent = kmhSpeed;
 
-            // Update total time
             const currentTime = Date.now();
             totalTime = ((currentTime - startTime) / 1000).toFixed(2);
             document.getElementById('totalTime').textContent = totalTime;
 
-            // Calculate average speed
             if (speed) {
-                speedSum += speed * 3.6; // Convert m/s to km/h
+                speedSum += speed * 3.6;
                 speedCount++;
             }
             const avgSpeed = speedCount ? (speedSum / speedCount).toFixed(2) : 0;
             document.getElementById('averageSpeed').textContent = avgSpeed;
 
-            // Calculate total distance
             if (previousPosition) {
                 const distance = calculateDistance(previousPosition, position.coords);
-                totalDistance += distance;
+                if (distance > minDistanceThreshold) {
+                    totalDistance += distance;
+                }
             }
             previousPosition = position.coords;
 
@@ -105,7 +201,7 @@
         }
 
         function calculateDistance(prevCoords, currCoords) {
-            const R = 6371000; // Earth's radius in meters
+            const R = 6371000; 
             const dLat = toRadians(currCoords.latitude - prevCoords.latitude);
             const dLng = toRadians(currCoords.longitude - prevCoords.longitude);
             const lat1 = toRadians(prevCoords.latitude);
