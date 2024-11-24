@@ -118,7 +118,7 @@
         </div>
         <div class="data-point">
             <span><span class="icon">📏</span><strong>Total Distance:</strong></span>
-            <span id="distance">0 m</span>
+            <span id="distance">0.00 km</span>
         </div>
         <div class="data-point">
             <span><span class="icon">⏱️</span><strong>Total Time:</strong></span>
@@ -130,13 +130,13 @@
     </div>
 
     <footer>
-        Made with ❤️ by <a href="https://instagram.com/mr_yadav_murlidhar">Sanjay Karmur</a>. Keep exploring!
+        Made with ❤️ by <a href="#">Your Name</a>. Keep exploring!
     </footer>
 
     <script>
         let watchId = null;
         let previousPosition = null;
-        let totalDistance = 0;
+        let totalDistance = 0;  // in meters
         let totalTime = 0;
         let speedSum = 0;
         let speedCount = 0;
@@ -196,12 +196,12 @@
             }
             previousPosition = position.coords;
 
-            document.getElementById('distance').textContent = totalDistance.toFixed(2);
+            document.getElementById('distance').textContent = (totalDistance / 1000).toFixed(2) + " km";  // Display in km
             document.getElementById('status').textContent = "Tracking your location...";
         }
 
         function calculateDistance(prevCoords, currCoords) {
-            const R = 6371000; 
+            const R = 6371000; // Earth radius in meters
             const dLat = toRadians(currCoords.latitude - prevCoords.latitude);
             const dLng = toRadians(currCoords.longitude - prevCoords.longitude);
             const lat1 = toRadians(prevCoords.latitude);
@@ -212,7 +212,7 @@
                       Math.sin(dLng / 2) * Math.sin(dLng / 2);
 
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return R * c;
+            return R * c; // returns distance in meters
         }
 
         function toRadians(degrees) {
