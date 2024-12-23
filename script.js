@@ -1,4 +1,4 @@
-
+  //99% of JavaScript is AI genetater!
         function setInitialTheme() {
          
             var body = document.body;
@@ -12,7 +12,7 @@ function switchTheme() {
 
     //device vibration for 1ms
     if (navigator.vibrate) {
-        navigator.vibrate(1);
+        navigator.vibrate(2);
     }
 
     if (body.style.backgroundColor === 'lightgrey') {
