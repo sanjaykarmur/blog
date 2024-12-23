@@ -7,55 +7,76 @@
 
         .subhead {
             color: #1d6fe0;
+            margin-top: 30px;
         }
+      .sub-title{
+      list-style: none;
+      }
 
-        table {
+        #headingtable{
             border-color: white;
         }
 
-        th {
+        #headtabth{
             border: none;
-            font-size: 42px;
+            font-size: 45px;
             color: #1d6fe0;
         }
 
-        td {
+        #headtabtd {
             border: none;
             font-size: 28px;
+            font-family: "Quicksand"
         }
 
+
         strong {
-            color: #679eeb;
+            color: #308ac7;
         }
 
         #themeButton-style {
             text-align: right;
         }
-    #themeButton {
-    background-color: black; /* Set your desired button color here */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Add some padding */
-    border-radius: 10px; /* Optional: add rounded corners */
-    width: 100%;
-}
 
-#themeButton:hover {
-    color: white; /* Keep text color white on hover */
-}
-    
-        .social-icons img {
-            width: 25px;
-            height: 25px;
-            margin: 5px;
+        #themeButton {
+        background-color: black; /* Set your desired button color here */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        padding: 10px 20px; /* Add some padding */
+        border-radius: 10px; /* Optional: add rounded corners */
+        width: 100%;
         }
 
-        .social-icons a:nth-child(2) img {
-            width: 34px;
-            height: 26px;
+        #themeButton:hover {
+        color: white;
         }
 
-        .social-icons a:nth-child(4) img {
-            width: 23px;
-            height: 23px;
-        }
+      img{
+          height: 40px;
+          width: 40px;
+      }
+
+      a img:active {
+          width: 43px;
+          height: 43px;
+      }
+
+    .social-icons{
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .child{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 45px;
+    width: 45px;
+    }
+
+      .social-link{
+     -webkit-tap-highlight-color: transparent;
+
+      }
