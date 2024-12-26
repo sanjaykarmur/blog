@@ -3,15 +3,20 @@
             margin: 20px;
             background-color: lightgrey;
             color: black;
+            font-family: open sans, roboto;
         }
 
         .subhead {
             color: #1d6fe0;
             margin-top: 30px;
         }
-      .sub-title{
-      list-style: none;
-      }
+.sub-title{
+     list-style: none;
+}
+p{
+    margin-top: 1px;
+    text-align: justify;
+}
 
         #headingtable{
             border-color: white;
@@ -48,19 +53,17 @@
         }
 
         #themeButton:hover {
-        color: white;
+        color: white; /* Keep text color white on hover */
         }
 
       img{
-          height: 40px;
-          width: 40px;
+          height: 42px;
+          width: 42px;
       }
-
       a img:active {
-          width: 43px;
-          height: 43px;
+          width: 46px;
+          height: 46px;
       }
-
     .social-icons{
         padding-top: 30px;
         display: flex;
@@ -75,8 +78,7 @@
     height: 45px;
     width: 45px;
     }
-
-      .social-link{
+.social-link{
      -webkit-tap-highlight-color: transparent;
 
-      }
+}
