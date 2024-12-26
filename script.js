@@ -1,4 +1,4 @@
-  //99% of JavaScript is AI genetater!
+  //Most of Script is genetated by an AI!
         function setInitialTheme() {
          
             var body = document.body;
