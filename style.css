@@ -9,13 +9,13 @@
             color: #1d6fe0;
             margin-top: 30px;
         }
-.sub-title{
-     list-style: none;
-}
-p{
+        .sub-title{
+            list-style: none;
+        }
+        p{
     margin-top: 1px;
     text-align: justify;
-}
+        }
 
         #headingtable{
             border-color: white;
@@ -43,16 +43,16 @@ p{
         }
 
         #themeButton {
-        background-color: black; /* Set your desired button color here */
-        color: white; /* Text color */
-        border: none; /* Remove border */
-        padding: 10px 20px; /* Add some padding */
-        border-radius: 10px; /* Optional: add rounded corners */
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
         width: 100%;
         }
 
         #themeButton:hover {
-        color: white; /* Keep text color white on hover */
+        color: white;
         }
 
       img{
@@ -63,21 +63,20 @@ p{
           width: 46px;
           height: 46px;
       }
-    .social-icons{
-        padding-top: 30px;
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-    }
+      .social-icons{
+          padding-top: 30px;
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+      }
 
-    .child{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 45px;
-    width: 45px;
-    }
-.social-link{
-     -webkit-tap-highlight-color: transparent;
-
-}
+      .child{
+         align-items: center;
+         justify-content: center;
+         display: flex;
+         height: 45px;
+         width: 45px;
+      }
+      .social-link{
+          -webkit-tap-highlight-color: transparent;
+      }
