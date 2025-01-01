@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <style>
+    * {
+      margin: 1%;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f3f4f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 100%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2rem;
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1rem;
+      color: #e63946;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    .redirect-message {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      color: #555;
+    }
+    a {
+      -webkit-tap-highlight-color: transparent;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    let countdown = 5;
+    const updateTimer = () => {
+      const timerElement = document.getElementById("timer");
+      timerElement.textContent = countdown;
+      if (countdown === 0) {
+        window.location.href = "https://sanjaykarmur.tech";
+      } else {
+        countdown--;
+        setTimeout(updateTimer, 1000);
+      }
+    };
+    window.onload = updateTimer;
+  </script>
+</head>
+<body>
+  <div class="container" style="width: 600px; height: 400px;">
+    <h1>Error 404</h1>
+    <h2>Page Not Found</h2>
+    <p class="redirect-message">
+      You'll be redirected to <b>sanjaykarmur.tech</b> in <b id="timer">5</b> seconds.
+    </p>
+    <p>
+      <a href="https://sanjaykarmur.tech">Tap here</a> if the page doesn't redirect!
+    </p>
+  </div>
+</body>
+</html>
