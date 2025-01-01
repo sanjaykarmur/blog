@@ -1,3 +1,1 @@
-Redirect 301 /index.html https://sanjaykarmur.tech/
-
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
