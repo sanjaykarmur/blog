@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internet Speed Test</title>
+    <title>Internet Speed Test (Debug Mode)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,6 +28,15 @@
             font-size: 24px;
             font-weight: normal;
         }
+        #debug {
+            margin-top: 20px;
+            font-size: 14px;
+            color: red;
+            white-space: pre-wrap;
+            text-align: left;
+            max-width: 90%;
+            word-wrap: break-word;
+        }
         button {
             margin-top: 30px;
             padding: 12px 25px;
@@ -37,51 +46,76 @@
             color: white;
             cursor: pointer;
             border-radius: 5px;
-            user-select: none; /* Prevent text selection */
+            user-select: none;
             transition: transform 0.1s ease-in-out;
+            outline: none;
         }
         button:active {
-            transform: scale(0.95); /* Key press effect */
+            transform: scale(0.95);
         }
         button:hover {
             background-color: #cc0000;
+        }
+        button:focus {
+            outline: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>Internet Speed Test</h1>
+    <h1>Internet Speed Test (Debug Mode)</h1>
     <p id="speed">-- <span class="unit">Mbps</span></p>
-    <button onclick="startSpeedTest()"><span>Restart Test</span></button>
+    <button onclick="startSpeedTest()">Restart Test</button>
+    <pre id="debug"></pre>
 
     <script>
         let interval;
-        const fileUrl = "https://speed.hetzner.de/10MB.bin"; // 10MB test file
-        const fileSizeInBits = 10 * 1024 * 1024 * 8; // Convert 10MB to bits
+        const fileUrl = "https://speed.hetzner.de/10MB.bin"; // Test file
+        const fileSizeInBits = 10 * 1024 * 1024 * 8; // 10MB to bits
+        const debugElement = document.getElementById("debug");
 
         function startSpeedTest() {
             clearInterval(interval);
-            interval = setInterval(measureSpeed, 1000); // Update speed every second
-            measureSpeed(); // Start immediately
+            interval = setInterval(measureSpeed, 1000);
+            measureSpeed();
         }
 
         function measureSpeed() {
             let startTime = new Date().getTime();
 
             fetch(fileUrl, { cache: "no-store" })
-                .then(response => response.blob()) // Download file
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
+                    }
+                    return response.blob();
+                })
                 .then(() => {
                     let endTime = new Date().getTime();
-                    let duration = (endTime - startTime) / 1000; // Time in seconds
-                    let speedMbps = (fileSizeInBits / duration) / (1024 * 1024); // Convert to Mbps
+                    let duration = (endTime - startTime) / 1000;
+                    let speedMbps = (fileSizeInBits / duration) / (1024 * 1024);
+
                     document.getElementById("speed").innerHTML = `${speedMbps.toFixed(2)} <span class="unit">Mbps</span>`;
+                    debugElement.textContent = `Success!\nTime Taken: ${duration.toFixed(2)}s\nEstimated Speed: ${speedMbps.toFixed(2)} Mbps`;
                 })
-                .catch(() => {
+                .catch(error => {
+                    let errorMessage = `Error Detected!\n${error.message}\n\nPossible Issues:\n`;
+                    
+                    if (error.message.includes("Failed to fetch")) {
+                        errorMessage += "- No internet connection OR file download blocked.\n";
+                    } 
+                    if (error.message.includes("CORS")) {
+                        errorMessage += "- CORS policy blocks the request. Try a different test file.\n";
+                    }
+                    if (error.message.includes("HTTP Error")) {
+                        errorMessage += "- Server might not be reachable OR test file removed.\n";
+                    }
+
+                    debugElement.textContent = errorMessage;
                     document.getElementById("speed").innerHTML = "Error";
                 });
         }
 
-        // Auto-start speed test on page load
         startSpeedTest();
     </script>
 
