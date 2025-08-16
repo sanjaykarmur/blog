@@ -1,18 +1,35 @@
 /* Base */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   -webkit-tap-highlight-color: transparent;
-  margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #faf2dc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
+  transition: all 0.3s ease;
+  position: sticky;
+  top:0;
+  z-index: 1000;
   background: #111827;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+}
+
+header.scrolled {
+  background: #111827;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 0.3rem 1.0rem; /* thinner height */
 }
 
 header h1 {
@@ -108,6 +125,7 @@ main {
   text-align: left;
   max-width: 900px;
   margin: 0 auto;
+  flex: 1; /* ensures footer stays at bottom */
 }
 
 main h2 {
@@ -123,9 +141,27 @@ main p, main ul {
   text-align: left;
 }
 
-
-.portfolio-preview h3, highlights h3{
+.portfolio-preview h3, highlights h3 {
   margin-top: 50px;
+}
+
+.cgray{
+  color: gray;
+}
+
+a{
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #1d4ed8;
+}
+
+a:focus, a:active {
+  color: #38bdf8;
+  outline: none;
 }
 
 /* Footer */
@@ -135,12 +171,4 @@ footer {
   padding: 10px;
   font-size: 15px;
   color: white;
-}
-
-.cgray{
-  color: gray;
-}
-
-a{
-  text-decoration: none;
 }

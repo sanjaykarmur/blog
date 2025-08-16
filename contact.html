@@ -31,6 +31,7 @@
     }
 
     input, textarea {
+      width: 90%;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 8px;
@@ -42,11 +43,6 @@
     input:focus, textarea:focus {
       border-color: #38bdf8;
       outline: none;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
     }
 
     button {
@@ -102,13 +98,24 @@
   <main>
     <section class="contact-section">
       <h2>Get in Touch</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="mobile" placeholder="Mobile Number (optional)">
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      
+      <form action="https://api.web3forms.com/submit" method="POST">
+
+  <!-- Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="a2c8fa8a-d504-4138-8097-2525ef879801">
+
+  <!-- Form Inputs -->
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="tel" name="mobile" placeholder="Mobile Number (optional)">
+  <textarea rows="6" cols="40" style="resize: none;" name="message" placeholder="Your Message" required></textarea>
+
+  <!-- Cloudflare Turnstile -->
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAABsTfRyBvQFMNkj5"></div>
+
+  <button type="submit">Send Message</button>
+</form>
+      
     </section>
         <div class="socials">
         <a href="mailto:sanjuahir9078@gmail.com"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email"></a>
@@ -123,7 +130,8 @@
     
     <p>© 2025 Sanjay Karmur. All Rights Reserved.</p>
   </footer>
-
+<!-- Cloudflare Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="script.js"></script>
 </body>
 </html>
