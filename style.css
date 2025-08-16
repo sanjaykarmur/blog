@@ -81,7 +81,7 @@ nav ul li a.active {
     width: 260px;
     height: 100vh;
     padding: 80px 20px;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.1s ease-in-out;
     box-shadow: -2px 0 10px rgba(0,0,0,0.3);
     z-index: 999;
   }
@@ -121,7 +121,7 @@ nav ul li a.active {
 
 /* Main content */
 main {
-  padding: 2rem;
+  padding: 0.8rem;
   text-align: left;
   max-width: 900px;
   margin: 0 auto;
