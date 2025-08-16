@@ -1,87 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Welcome to the personal blog of me, Sanjay Karmur! Discover insights into technology, web development, networking, and software development. Follow my journey as a BCA student exploring the world of tech from Gujarat, India. Stay updated with my latest learning and projects." />
-
-    <title>Personal blog of Sanjay Karmur</title>
-
-<link rel="canonical" href="https://sanjaykarmur.tech/" />
-<link href="favicon.ico" rel="icon" type="image/x-icon">
-
-  <link rel="stylesheet" href="style.css">
- 
- <script src="script.js"></script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "url": "https://sanjaykarmur.tech",
-  "logo": "https://i.postimg.cc/9FBcYRHn/Picsart-24-12-26-22-48-12-637.jpg"
-}
-</script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjay Karmur | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <p id="themeButton-style">
-        <button id="themeButton" class="theme-button" onclick="switchTheme()">Dark Theme</button>
-    </p>
-        <table id="headingtable" border="5" cellpadding="15" width="100%">
-            <tr>
-                <th id="headtabth" align="center">Sanjay Karmur</th>
-            </tr>
-            <tr>
-                <td id="headtabtd" align="center">Personal blog</td>
-            </tr>
-        </table>
-
-    <h3 class="subhead">Introduction</h3>
-    <p>Welcome to my blog! I’m Sanjay, a 18-year-old from Gujarat, India, currently in my Second semester of a BCA program at RK University, Rajkot, Gujarat. This blog is a reflection of my growing enthusiasm and curiosity as I begin my journey into the world of technology.</p>
-
-    <h3 class="subhead">My Technological Curiosity</h3>
-    <p>As I start my studies, I’m particularly excited about exploring several areas of technology:</p>
-
-    <ul class="sub-title">
-        <li><strong>Networking:</strong> I’m eager to learn about how networks operate and manage data, even though I currently have no experience or knowledge in this field.</li>
-        <li><strong>Web Development:</strong> I’m interested in understanding how websites are built and function, from front-end design to back-end integration.</li>
-        <li><strong>Software Development:</strong> I’m keen to learn about creating software applications, understanding programming languages, and developing solutions.</li>
-        <li><strong>Databases:</strong> I’m excited to explore how databases store, manage, and retrieve data efficiently.</li>
+<header>
+  <h1>Sanjay Karmur</h1>
+  <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+  <nav>
+    <ul id="menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+  </nav>
+</header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Welcome to My Digital World</h2>
+      <p>
+        I’m <strong>Sanjay Karmur</strong>, a technology enthusiast, bug hunter, and future IT professional.  
+        Over the past years, I’ve tested smartphones, explored operating systems, and contributed
+        hundreds of valuable feedback reports. Alongside that, I’ve been working on building websites,
+        learning ethical hacking, and developing digital projects.  
+      </p>
+      <a href="about.html" class="btn">Discover My Story</a>
+    </section>
 
-    <h3 class="subhead">Learning Goals</h3>
-    <p>My focus right now is to:</p>
-    <ul class="sub-title" >
-        <li><strong>Build a Strong Base:</strong> Start with the basics and gradually develop a solid understanding of these technology areas.</li>
-        <li><strong>Stay Updated:</strong> Follow the latest trends and advancements in technology as I progress in my studies.</li>
-    </ul>
+    <!-- Skills and Expertise -->
+    <section class="skills">
+      <h3>My Core Expertise</h3>
+      <p>
+        I believe in constantly learning and upgrading myself with new technologies. My main focus areas include:
+      </p>
+      <ul>
+        <li><strong>Bug Hunting & Smartphone Testing:</strong> Ranked #1 bug hunter for smartphones with 275+ valid feedbacks.</li>
+        <li><strong>Usability & Performance Testing:</strong> Hands-on experience with unreleased devices, providing crucial usability insights.</li>
+        <li><strong>Web Development:</strong> Designing static, responsive, and professional websites for portfolios, blogs, and landing pages.</li>
+        <li><strong>Networking & Ethical Hacking:</strong> Learning the fundamentals of network security and penetration testing.</li>
+        <li><strong>Problem-Solving:</strong> Strong analytical skills with a focus on delivering practical solutions.</li>
+      </ul>
+    </section>
 
-    <h3 class="subhead">Conclusion</h3>
-    <p>Thank you for visiting my blog. I’m looking forward to sharing my learning journey and insights as I explore these exciting fields of technology. If you’re interested in discussing any of these topics or have advice to offer, I’d love to connect!</p>
-    
-    <footer>   
-    <div class="social-icons">
-        <div class="child">
-            <a class="social-link" target="_blank" href="https://www.linkedin.com/in/sanjay-karmur-53a207257">
-            <img class="icon-logo" src="https://i.postimg.cc/wvkWrCyd/in.webp" title="LinkedIn Profile" alt="LinkedIn Icon"></a>
+    <!-- Highlights Section -->
+    <section class="highlights">
+      <h3>Why Choose Me?</h3>
+      <div class="cards">
+        <div class="card">
+          <h4>Proven Bug Hunter</h4>
+          <p>With over 275+ verified reports, I’ve helped companies identify hidden flaws and improve their products’ stability.</p>
         </div>
-        <div class="child">
-             <a class="social-link" target="_blank" href="https://github.com/SanjayKarmur">
-             <img class="icon-logo" src="https://i.postimg.cc/bNV5pf6y/github.webp" title="GitHub Profile" alt="GitHub Icon"></a>
+        <div class="card">
+          <h4>Tech Explorer</h4>
+          <p>I don’t just stick to one field. From mobile testing to web building, I explore every area that can sharpen my skills.</p>
         </div>
-        <div class="child">
-             <a class="social-link" target="_blank" href="https://x.com/SANJAYKARMUR156">
-             <img class="icon-logo" src="https://i.postimg.cc/FH2nkg5w/x.webp" title="X Profile" alt="X Icon"></a>
+        <div class="card">
+          <h4>Future-Oriented</h4>
+          <p>My goal is to achieve a net worth of 100 Crores and become a respected figure in the Indian tech industry.</p>
         </div>
-        <div class="child">
-             <a class="social-link" target="_blank" href="https://instagram.com/mr_yadav_murlidhar">
-             <img class="icon-logo" src="https://i.postimg.cc/hjnypDGr/ig.webp" title="Instagram Profile" alt="Instagram Icon"></a>
-        </div>
-        <div class="child">
-             <a class="social-link" target="_blank" href="mailto:contact@sanjaykarmur.tech">
-             <img class="icon-logo" src="https://i.postimg.cc/ZYcgsdpy/email.webp" title="Email Me" alt="Email Icon"></a>
-        </div>
-    </div>
-    </footer>
+      </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="portfolio-preview">
+      <h3>My Work at a Glance</h3>
+      <p>
+        I’ve contributed in smartphone testing projects, created blogs, and built portfolios that represent skills with a clean design.
+        Here are a few examples:
+      </p>
+      <div class="preview-grid">
+        <div class="preview-item">📱 Smartphone Bug Reports</div>
+        <div class="preview-item">💻 Static Portfolio Sites</div>
+        <div class="preview-item">📝 Blog on Tech & Testing</div>
+      </div>
+      <a href="portfolio.html" class="btn">See Full Portfolio</a>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h3>What People Say</h3>
+      <blockquote>
+        “Sanjay’s ability to find hidden bugs is outstanding. His feedback has helped us improve our smartphone software
+        before public release.”  
+        <cite>- A Test Lead</cite>
+      </blockquote>
+      <blockquote>
+        “He built a clean and professional static site for our small business in record time. Easy to communicate and very reliable.”  
+        <cite>- A Client</cite>
+      </blockquote>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <h3>Let’s Build Together</h3>
+      <p>
+        Whether it’s testing a product, building a static site, or sharing insights about ethical hacking,  
+        I’m always ready for collaboration. Let’s create something meaningful.
+      </p>
+      <a href="contact.html" class="btn">Contact Me</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sanjay Karmur | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
