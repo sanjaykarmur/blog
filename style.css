@@ -1,6 +1,5 @@
 /* Base */
 html, body {
-  height: 100%;
   margin: 0;
 }
 
@@ -12,6 +11,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
 
 header {
   transition: all 0.3s ease;
@@ -74,14 +74,14 @@ nav ul li a.active {
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
-    background: #1f2937;
+    background: #1d2942;
     position: fixed;
     top: 0;
     right: -100%;   /* hidden offscreen */
-    width: 260px;
+    width: 200px;
     height: 100vh;
     padding: 80px 20px;
-    transition: right 0.1s ease-in-out;
+    transition: right 0.3s ease-in-out;
     box-shadow: -2px 0 10px rgba(0,0,0,0.3);
     z-index: 999;
   }
@@ -151,7 +151,6 @@ main p, main ul {
 
 a{
   color: #2563eb;
-  text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 
@@ -171,4 +170,51 @@ footer {
   padding: 10px;
   font-size: 15px;
   color: white;
+}
+
+
+
+/* Theme Toggle Button */
+#theme-toggle {
+  border: black solid 3px;
+  cursor: pointer;
+  border: none;
+  font-size: 1.4rem;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+  z-index: 998; /* keeps it above other elements */
+}
+
+/* Dark mode */
+body.dark {
+  background: #1f2d4d;
+  color: #f9f9f9;
+}
+
+/* Header & footer in dark mode */
+body.dark header,
+body.dark footer {
+  background: #090e17;
+}
+
+/* Adjust headings & text in dark mode */
+body.dark main h2,
+body.dark main h3,
+body.dark main h4,
+body.dark p,
+body.dark ul,
+body.dark li {
+  color: #f9f9f9;
+}
+
+/* Navbar links in dark mode */
+body.dark nav ul li a {
+  color: #f9f9f9;
+}
+body, header, footer {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#theme-toggle:active {
+  transform: scale(0.85);
 }
