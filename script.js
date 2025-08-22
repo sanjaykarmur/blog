@@ -1,5 +1,5 @@
 function toggleMenu() {
-  // device vibration for 1ms
+  // device vibration for 2ms
   if (navigator.vibrate) {
     navigator.vibrate(2);
   }
